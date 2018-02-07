@@ -1,8 +1,10 @@
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 11,
           center: {lat: -33.534255099999996, lng: -70.7752498},
+          mapTypeId: 'hybrid'
         });
+
 
 
     function buscar() {
@@ -20,9 +22,13 @@
 
     var miUbicacion = new google.maps.Marker({
     position: {lat:latitud, lng:longitud},
-    map: map
+    map: map,
+    icon: "http://www.raileurope.ca/squelettes/img/services/VEL.png"
     });
   };
+
+  map.setTilt(45);
+  map.setCenter({lat:latitud, lng:longitud});
 
     var funcionError = function(error) {
       alert("No has permitido usar tu ubicación maldito engendro");
